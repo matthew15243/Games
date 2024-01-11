@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "emulator": "firebase emulators:start --only hosting",
+    "host" : "webpack && firebase deploy --only hosting",
+    "deploy": "branch=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD); if [[ $branch == \"main\" ]]; then webpack && firebase deploy --only hosting; else echo \"You must be on main to deploy!\"; fi;"
   },
   "author": "",
   "license": "ISC",
