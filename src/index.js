@@ -4,7 +4,7 @@ const db = getFirestore(app);
 
 window.log = () => console.log('It Works! Duh')
 
-async function createDoc(db) {
+/*async function createDoc(db) {
 	try {
 		const docRef = await addDoc(collection(db, "users"), {
 			first: "Ada",
@@ -18,4 +18,4 @@ async function createDoc(db) {
 	}
 }
 
-createDoc(db)
+createDoc(db)*/
