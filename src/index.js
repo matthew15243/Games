@@ -2,7 +2,7 @@ import app from './_firebase.js'
 import { getFirestore, addDoc, collection } from "firebase/firestore";
 const db = getFirestore(app);
 
-window.log = () => console.log('It Works! Duh')
+// window.log = () => console.log('It Works! Duh')
 
 /*async function createDoc(db) {
 	try {
