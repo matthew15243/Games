@@ -7,7 +7,7 @@ const auth = getAuth(app)
 // Not needed, this is only for the emulator
 connectAuthEmulator(auth, "http://localhost:9099");
 
-const createAccount = async () => {
+async function createAccount() {
 	const loginEmail = document.getElementById('username').value
 	const loginPassword = document.getElementById('password').value
 
@@ -27,6 +27,7 @@ const loginEmailPassword = async () => {
 	try {
 		const userCredentials = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
 		window.location.href = "/public/hearts.html";
+		document.getElementById('errorMessage').innerHTML = ""
 	}
 	catch(error) {
 		if (error.code == AuthErrorCodes.INVALID_PASSWORD || error.code == AuthErrorCodes.INVALID_EMAIL) {
@@ -45,7 +46,6 @@ async function logOut() {
 }
 
 async function monitorAuthState() {
-	console.log("here")
 	onAuthStateChanged(auth, user => {
 		if (user) {
 			console.log("signed in")

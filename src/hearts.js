@@ -57,8 +57,8 @@ let hands = initializeHands(deck, numberOfPlayers)
 let domHands = document.querySelectorAll('[id^="hand"]')
 
 for (let i = 0; i < hands.length; i++) {
+	sortHand(hands[i])
 	for (let j = 0; j < hands[i].length; j++) {
-		sortHand(hands[i])
 		let card = createCard(hands[i][j])
 		domHands[i].appendChild(card)
 	}
