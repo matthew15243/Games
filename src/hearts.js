@@ -15,7 +15,7 @@ let numberOfPlayers = 4;
  * @param {Number} numberOfHands - Number of hands to split the deck into
  * @returns {Array} Array of arrays (hands)
  */
-function initializeHands(deck, numberOfHands) {
+function initializeHands(deck, numberOfHands, numCards = Infinity) {
 	// Create a deep copy of the deck to edit
 	let tempDeck = [...deck]
 
@@ -26,7 +26,7 @@ function initializeHands(deck, numberOfHands) {
 	}
 
 	// Populate the hands
-	for (let i = 0; i < deck.length; i++) {
+	for (let i = 0; i < Math.min(deck.length, numCards * numberOfHands); i++) {
 		const number = Math.floor(tempDeck.length * Math.random())
 		hands[i % numberOfHands].push(tempDeck[number])
 		tempDeck.splice(number, 1)
