@@ -26,7 +26,7 @@ const loginEmailPassword = async () => {
 
 	try {
 		const userCredentials = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-		window.location.href = "/public/hearts.html";
+		// window.location.href = "/public/hearts.html";
 		document.getElementById('errorMessage').innerHTML = ""
 	}
 	catch(error) {
