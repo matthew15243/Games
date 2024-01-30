@@ -4,9 +4,6 @@ import {getAuth, connectAuthEmulator, signInWithEmailAndPassword, AuthErrorCodes
 // Initialize the Auth instance
 const auth = getAuth(app)
 
-// Not needed, this is only for the emulator
-connectAuthEmulator(auth, "http://localhost:9099");
-
 async function createAccount() {
 	const loginEmail = document.getElementById('username').value
 	const loginPassword = document.getElementById('password').value
