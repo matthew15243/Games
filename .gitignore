@@ -1,10 +1,5 @@
 /node_modules
 /public/scripts
 /firebase-debug.log
-<<<<<<< HEAD
 /firestore-debug.log
 /ui-debug.log
-=======
-/ui-debug.log
-/.firebase
->>>>>>> Matthew
