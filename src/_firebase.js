@@ -16,4 +16,14 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+if (location.hostname === "127.0.0.1") {
+  console.log('EMULATOR')
+
+  const db = getFirestore(app);
+  const auth = getAuth(app);
+
+  connectFirestoreEmulator(db, '127.0.0.1', 8080);
+  connectAuthEmulator(auth, "http://127.0.0.1:9099");
+}
+
 export default app

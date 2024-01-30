@@ -4,9 +4,6 @@ import {getAuth, connectAuthEmulator, signInWithEmailAndPassword, AuthErrorCodes
 const db = getFirestore(app);
 const auth = getAuth(app)
 
-// Not needed, this is only for the emulator
-connectAuthEmulator(auth, "http://localhost:9099");
-
 // let deck = ['hearts_ace', 'hearts_2', 'hearts_3', 'hearts_4', 'hearts_5', 'hearts_6', 'hearts_7', 'hearts_8', 'hearts_9', 'hearts_10', 'hearts_jack', 'hearts_queen', 'hearts_king',
 			// 'spades_ace', 'spades_2', 'spades_3', 'spades_4', 'spades_5', 'spades_6', 'spades_7', 'spades_8', 'spades_9', 'spades_10', 'spades_jack', 'spades_queen', 'spades_king',
 			// 'clubs_ace', 'clubs_2', 'clubs_3', 'clubs_4', 'clubs_5', 'clubs_6', 'clubs_7', 'clubs_8', 'clubs_9', 'clubs_10', 'clubs_jack', 'clubs_queen', 'clubs_king',
