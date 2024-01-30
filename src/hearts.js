@@ -75,7 +75,7 @@ async function monitorAuthState() {
 		}
 		else {
 			console.log("Not signed in")
-			// window.location.href = "/public/";
+			window.location.href = "/";
 		}
 	})
 }
