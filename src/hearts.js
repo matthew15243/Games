@@ -43,6 +43,7 @@ function createCard(card) {
 	let cardElement = document.createElement('div')
 	let img = document.createElement('img')
 	img.src = card['filePath']
+	// img.src = card['filePath'].replace('images', 'images/grandmaCards/')
 
 	// Append the image to the div
 	cardElement.appendChild(img)
@@ -74,7 +75,7 @@ async function monitorAuthState() {
 		}
 		else {
 			console.log("Not signed in")
-			window.location.href = "/public";
+			window.location.href = "/";
 		}
 	})
 }
