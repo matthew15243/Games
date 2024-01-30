@@ -26,8 +26,8 @@ const loginEmailPassword = async () => {
 
 	try {
 		const userCredentials = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-		// window.location.href = "/public/hearts.html";
 		document.getElementById('errorMessage').innerHTML = ""
+		window.location.href = "./hearts.html";
 	}
 	catch(error) {
 		if (error.code == AuthErrorCodes.INVALID_PASSWORD || error.code == AuthErrorCodes.INVALID_EMAIL) {
