@@ -8,3 +8,30 @@ body, html {
   margin: 0px;
   scroll-behavior: smooth;
 }
+
+#signInModal {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  margin: 0 auto;
+  max-width: 80%;
+  width: 500px;
+
+  border: 2px solid red;
+}
+
+.user-pass-container {
+  display: flex;
+  justify-content: center;
+
+  gap: 1rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+
+  gap: 1rem;
+}
