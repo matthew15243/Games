@@ -3,7 +3,6 @@ import './_auth.js'
 import { getFirestore, addDoc, collection } from "firebase/firestore";
 import {getAuth, connectAuthEmulator, signInWithEmailAndPassword, AuthErrorCodes, createUserWithEmailAndPassword, onAuthStateChanged, signOut} from 'firebase/auth';
 const db = getFirestore(app);
-const auth = getAuth(app)
 
 // let deck = ['hearts_ace', 'hearts_2', 'hearts_3', 'hearts_4', 'hearts_5', 'hearts_6', 'hearts_7', 'hearts_8', 'hearts_9', 'hearts_10', 'hearts_jack', 'hearts_queen', 'hearts_king',
 			// 'spades_ace', 'spades_2', 'spades_3', 'spades_4', 'spades_5', 'spades_6', 'spades_7', 'spades_8', 'spades_9', 'spades_10', 'spades_jack', 'spades_queen', 'spades_king',
@@ -57,16 +56,17 @@ function initializeHands(deck, numberOfHands, numCards = Infinity) {
 
 function createCard(card) {
 	// Create the card elements (image inside a div)
-	let cardElement = document.createElement('div')
+	// let cardElement = document.createElement('div')
 	let img = document.createElement('img')
 	img.src = card['filePath']
 	// img.src = card['filePath'].replace('images', 'images/grandmaCards/')
 
 	// Append the image to the div
-	cardElement.appendChild(img)
+	// cardElement.appendChild(img)
 
 	// Return the card
-	return cardElement
+	// return cardElement
+	return img
 }
 
 function sortHand(hand) {
