@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
-    "emulator": "firebase emulators:start --only hosting",
+    "emulator-hosting": "firebase emulators:start --only hosting",
+    "emulator": "firebase emulators:start",
     "host" : "webpack && firebase deploy --only hosting",
     "deploy": "branch=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD); if [[ $branch == \"main\" ]]; then webpack && firebase deploy --only hosting; else echo \"You must be on main to deploy!\"; fi;"
   },

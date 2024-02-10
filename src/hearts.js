@@ -1,6 +1,8 @@
 import app from './_firebase.js'
 import { getFirestore, addDoc, collection } from "firebase/firestore";
+import {getAuth, connectAuthEmulator, signInWithEmailAndPassword, AuthErrorCodes, createUserWithEmailAndPassword, onAuthStateChanged, signOut} from 'firebase/auth';
 const db = getFirestore(app);
+const auth = getAuth(app)
 
 // let deck = ['hearts_ace', 'hearts_2', 'hearts_3', 'hearts_4', 'hearts_5', 'hearts_6', 'hearts_7', 'hearts_8', 'hearts_9', 'hearts_10', 'hearts_jack', 'hearts_queen', 'hearts_king',
 			// 'spades_ace', 'spades_2', 'spades_3', 'spades_4', 'spades_5', 'spades_6', 'spades_7', 'spades_8', 'spades_9', 'spades_10', 'spades_jack', 'spades_queen', 'spades_king',
@@ -41,6 +43,7 @@ function createCard(card) {
 	let cardElement = document.createElement('div')
 	let img = document.createElement('img')
 	img.src = card['filePath']
+	// img.src = card['filePath'].replace('images', 'images/grandmaCards/')
 
 	// Append the image to the div
 	cardElement.appendChild(img)
@@ -63,3 +66,17 @@ for (let i = 0; i < hands.length; i++) {
 		domHands[i].appendChild(card)
 	}
 }
+
+// Authentication
+async function monitorAuthState() {
+	onAuthStateChanged(auth, user => {
+		if (user) {
+			console.log(user);
+		}
+		else {
+			console.log("Not signed in")
+			window.location.href = "/";
+		}
+	})
+}
+monitorAuthState()

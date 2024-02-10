@@ -1,3 +1,5 @@
 /node_modules
 /public/scripts
 /firebase-debug.log
+/firestore-debug.log
+/ui-debug.log

@@ -4,9 +4,6 @@ import {getAuth, connectAuthEmulator, signInWithEmailAndPassword, AuthErrorCodes
 // Initialize the Auth instance
 const auth = getAuth(app)
 
-// Not needed, this is only for the emulator
-connectAuthEmulator(auth, "http://localhost:9099");
-
 async function createAccount() {
 	const loginEmail = document.getElementById('username').value
 	const loginPassword = document.getElementById('password').value
@@ -26,8 +23,8 @@ const loginEmailPassword = async () => {
 
 	try {
 		const userCredentials = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-		window.location.href = "/public/hearts.html";
 		document.getElementById('errorMessage').innerHTML = ""
+		window.location.href = "./lobby.html";
 	}
 	catch(error) {
 		if (error.code == AuthErrorCodes.INVALID_PASSWORD || error.code == AuthErrorCodes.INVALID_EMAIL) {
