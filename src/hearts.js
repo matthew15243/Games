@@ -17,16 +17,6 @@ function initialize() {
 	// Create the hands
 	let hands = initializeHands(deck, numberOfPlayers)
 
-	// Create the document
-	gameData = {
-		'Hand 1' : hands[0]
-		, 'Hand 2' : hands[1]
-		, 'Hand 3' : hands[2]
-		, 'Hand 4' : hands[3]
-	}
-
-	console.log(gameData)
-
 	// Display hands
 	let domHands = document.querySelectorAll('[id^="hand"]')
 

@@ -11,6 +11,16 @@
   	<script src="scripts/lobby.js" defer></script>
 </head>
 <body>
-	<button onclick="window.location.href='./hearts.html'">Hearts</button>
+	<div>
+		<button id = 'hearts' onclick="selectGame('hearts')">Hearts</button>
+		<button id = 'handAndFoot' onclick="selectGame('handAndFoot')">Hand and Foot</button>
+	</div>
+	<div>
+		<button onclick="joinGame()">Join</button>
+	</div>
+	<div>
+		<div id = 'activePlayers'>
+		</div>
+	</div>
 </body>
 </html>

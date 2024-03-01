@@ -1,0 +1,9 @@
+.active {
+	background-color: green;
+	color: white;
+}
+
+#activePlayers {
+	border-radius: 1px;
+	border-style: solid;
+}
